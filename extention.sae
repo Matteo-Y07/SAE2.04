@@ -281,3 +281,473 @@ CREATE TABLE Note(
    CONSTRAINT fk_Note_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
    CONSTRAINT fk_Note_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas)
 );
+
+-- **************************************************************************** Insertions des données
+
+PROMPT  'Insertions des données ';
+
+PROMPT  'Insertions des données de la table Organisme ';
+
+
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (1,  'Poulet d Or Distribution ',  '80245678900012 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (2,	 'Coopérative Fromagère des Cimes ',  '45123456700045 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (3,	 'Import-Export Ananas Tropical ',	 '78945612300089 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (4,	 'Logistique Secrète Tenrac ',	 '32165498700034 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (5,	 'Friteuses Pro Industrie ',	 '15975345600021 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (6,  'Élevage du Val de l Orne ',	 '95135745600078 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (7,	 'Fromagerie du Mont-Royal ',	 '48261537400012 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (8,	 'Centrale d Achat du Tender ',	 '65498732100067 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (9,	 'Gastronomie de l Ordre ',	 '75315985200019 ');
+INSERT INTO Organisme (idOrganisme, raisonSociale, siret) VALUES (10,  'Matériel de Cuisine du Baron ',	 '25845612300056 ');
+
+PROMPT  'Insertions des données de la table Repas ';
+
+INSERT INTO Repas (idRepas, libelle) VALUES (1,	 'Tenrac Royal ');
+INSERT INTO Repas (idRepas, libelle) VALUES (2,	 'Le Gala des Tenders Dorés ');
+INSERT INTO Repas (idRepas, libelle) VALUES (3,	 'La Cérémonie de la Meule Fondante ');
+INSERT INTO Repas (idRepas, libelle) VALUES (4,	 'L Agapè du Poulet Croustillant ');
+INSERT INTO Repas (idRepas, libelle) VALUES (5,	 'Le Conclave de la Raclette Royale ');
+INSERT INTO Repas (idRepas, libelle) VALUES (6,	 'Le Festin des Convictions Profondes ');
+INSERT INTO Repas (idRepas, libelle) VALUES (7,	 'La Veillée du Tender d Alpage ');
+INSERT INTO Repas (idRepas, libelle) VALUES (8,	 'Le Rassemblement de l Ordre Secret ');
+INSERT INTO Repas (idRepas, libelle) VALUES (9,	 'Le Banquet de l Alliance Terre-Mer (Saumon-Raclette) ');
+INSERT INTO Repas (idRepas, libelle) VALUES (10,  'La Célébration de l Ananas Fondu ');
+INSERT INTO Repas (idRepas, libelle) VALUES (11,  'Le Symposium de la Friteuse Sacrée ');
+INSERT INTO Repas (idRepas, libelle) VALUES (12,  'L Inauguration de la Meule Philanthrope ');
+INSERT INTO Repas (idRepas, libelle) VALUES (13,  'La Grande Tablée de l Intronisation ');
+INSERT INTO Repas (idRepas, libelle) VALUES (14,  'Le Festin du Tender Sacré ');
+INSERT INTO Repas (idRepas, libelle) VALUES (15,  'La Raclette des Ombres ');
+INSERT INTO Repas (idRepas, libelle) VALUES (16,  'Le Banquet de l Ordre Suprême ');
+INSERT INTO Repas (idRepas, libelle) VALUES (17,  'La Dégustation des Chevaliers Fondus ');
+INSERT INTO Repas (idRepas, libelle) VALUES (18,  'Le Repas de la Lame Chauffante ');
+INSERT INTO Repas (idRepas, libelle) VALUES (19,  'La Cène du Coulant Éternel ');
+INSERT INTO Repas (idRepas, libelle) VALUES (20,  'Le Dîner des Porte-Spatules Réunis ');
+INSERT INTO Repas (idRepas, libelle) VALUES (21,  'La Nuit du Fromage Interminable ');
+INSERT INTO Repas (idRepas, libelle) VALUES (22,  'Le Souper des Initiés du Gril Mystique ');
+INSERT INTO Repas (idRepas, libelle) VALUES (23,  'La Communion du Tender Béni ');
+INSERT INTO Repas (idRepas, libelle) VALUES (24,  'Le Festin de la Croûte Dorée ');
+INSERT INTO Repas (idRepas, libelle) VALUES (25,  'Le Grand Conclave du Fil Fondu ');
+
+PROMPT  'Insertions des données de la table Aliments '
+
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (1	,   'Raclette ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (2	,   'Mozzarella ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (3	,   'Comté ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (4	,   'Emmental ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (5	,   'Cheddar ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (6	,   'Gruyère ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (7	,   'Reblochon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (8	,   'Brie ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (9	,   'Camembert ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (10,	 'Munster ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (11,	 'Gouda ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (12,	 'Beaufort ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (13,	 'Appenzeller ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (14,	 'Fontina ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (15,	 'Tomme de Savoie ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (16,	 'Tenders de poulet ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (17,	 'Poulet frit ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (18,	 'Blanc de poulet ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (19,	 'Viande à kebab ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (20,	 'Merguez ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (21,	 'Chipolata ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (22,	 'Lardons ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (23,	 'Jambon blanc ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (24,	 'Jambon cru ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (25,	 'Bacon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (26,	 'Bœuf haché ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (27,	 'Entrecôte ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (28,	 'Magret de canard ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (29,	 'Chorizo ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (30,	 'Gyros ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (31,	 'Escalope de dinde ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (32,	 'Andouillette ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (33,	 'Saucisse de Francfort ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (34,	 'Saumon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (35,	 'Thon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (36,	 'Crevettes ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (37,	 'Cabillaud ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (38,	 'Sardine ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (39,	 'Truite fumée ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (40,	 'Lieu noir ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (41,	 'Sole ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (42,	 'Maquereau ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (43,	 'Ananas ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (44,	 'Citron ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (45,	 'Tomate cerise ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (46,	 'Figue ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (47,	 'Mangue ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (48,	 'Poire ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (49,	 'Pomme ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (50,	 'Framboise ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (51,	 'Avocat ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (52,	 'Grenade ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (53,	 'Champignon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (54,	 'Courgette ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (55,	 'Poivron ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (56,	 'Oignon ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (57,	 'Poireau ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (58,	 'Épinard ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (59,	 'Brocoli ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (60,	 'Carotte ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (61,	 'Aubergine ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (62,	 'Artichaut ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (63,	 'Asperge ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (64,	 'Navet ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (65,	 'Betterave ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (66,	 'Chou ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (67,	 'Fenouil ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (68,	 'Radis ');
+INSERT TABLE Aliments (idAliment, nomAliment) VALUES (69,	 'Olives ');
+
+PROMPT  'Insertion des données de la table Sauces ';
+
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (1,  'Sauce Blanche du Tenrac ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (2,  'Sauce Chasseur au Fromage ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (3,  'Mayonnaise Maison au Beurre ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (4,  'Moutarde à l Ancienne Fondante ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (5,  'Ketchup Gourmet Epicé ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (6,  'Sauce Samouraï de l Ordre ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (7,  'Sauce Algérienne de la Meule ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (8,  'Sauce Curry-Raclette ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (9,  'Sauce Poivre Vert Crémée ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (10, 'Sauce Barbecue Fumée ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (11,	 'Sauce Béarnaise au Beurre de Baratte ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (12,	 'Sauce Tartare des Alpages ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (13,	 'Sauce Aïoli du Chevalier ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (14,	 'Sauce Hannibal du Commandeur ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (15,	 'Sauce Biggy-Tender ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (16,	 'Sauce Cheesy-Kebab ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (17,	 'Sauce Hollandaise au Saumon ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (18,	 'Sauce Cocktail au Fromage ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (19,	 'Sauce Bourgy-Tender ');
+INSERT TABLE Sauces (idSauce, nomSauce) VALUES (20,	 'Sauce Magic-Raclette. ');
+
+PROMPT  'Insertion des données de la table Ingredients ';
+
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (1,	 'Huile de tournesol ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (2,	 'Huile d olive ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (3,	 'Huile de sésame ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (4,	 'Huile de colza ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (5,	 'Beurre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (6,	 'Crème fraîche ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (7,	 'Jaune d œuf ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (8,	 'Margarine ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (9,	 'Graisse de canard ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (10,	 'Vinaigre blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (11,	 'Vinaigre balsamique ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (12,	 'Vinaigre de cidre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (13,	 'Vinaigre de riz ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (14,	 'Jus de citron ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (15,	 'Jus de citron vert ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (16,	 'Jus d orange ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (17,	 'Vin blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (18,	 'Moutarde de Dijon ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (19,	 'Moutarde à l ancienne ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (20,	 'Moutarde douce ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (21,	 'Sel ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (22,	 'Poivre noir ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (23,	 'Poivre blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (24,	 'Paprika ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (25,	 'Paprika fumé ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (26,	 'Cumin ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (27,	 'Curcuma ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (28,	 'Curry ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (29,	 'Piment de Cayenne ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (30,	 'Piment doux ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (31,	 'Coriandre moulue ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (32,	 'Gingembre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (33,	 'Ail en poudre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (34,	 'Oignon en poudre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (35,	 'Herbes de Provence ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (36,	 'Origan ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (37,	 'Thym ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (38,	 'Basilic ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (39,	 'Aneth ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (40,	 'Ciboulette ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (41,	 'Persil ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (42,	 'Estragon ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (43,	 'Noix de muscade ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (44,	 'Sucre blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (45,	 'Sucre roux ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (46,	 'Miel ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (47,	 'Sirop d érable ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (48,	 'Sirop d agave ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (49,	 'Sucre glace ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (50,	 'Caramel ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (51,	 'Concentré de tomate ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (52,	 'Coulis de tomate ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (53,	 'Sauce tomate ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (54,	 'Sauce soja ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (55,	 'Sauce soja sucrée ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (56,	 'Sauce Worcestershire ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (57,	 'Sauce tabasco ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (58,	 'Sauce sriracha ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (59,	 'Sauce hoisin ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (60,	 'Sauce teriyaki ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (61,	 'Sauce barbecue ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (62,	 'Ketchup ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (63,	 'Mayonnaise ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (64,	 'Crème de raifort ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (65,	 'Tahini ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (66,	 'Pesto vert ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (67,	 'Pesto rouge ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (68,	 'Tapenade ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (69,	 'Harissa ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (70,	 'Sambal oelek ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (71,	 'Ail frais ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (72,	 'Échalote ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (73,	 'Oignon frais ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (74,	 'Câpres ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (75,	 'Cornichons hachés ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (76,	 'Anchois ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (77,	 'Parmesan râpé ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (78,	 'Levure nutritionnelle ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (79,	 'Miso blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (80,	 'Bouillon de poulet ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (81,	 'Bouillon de légumes ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (82,	 'Fromage blanc ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (83,	 'Yaourt nature ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (84,	 'Crème liquide ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (85,	 'Philadelphia ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (86,	 'Ricotta ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (87,	 'Mascarpone ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (88,	 'Lait de coco ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (89,	 'Eau ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (90,	 'Lait ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (91,	 'Bière blonde ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (92,	 'Cidre ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (93,	 'Jus de pomme ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (94,	 'Sauce poisson (nuoc-mâm) ');
+INSERT TABLE Ingredients (idIngredient, nomIngredient) VALUES (95,	 'Lait d amande ');
+
+PROMPT  'Insertion des donnée de la table Machine ';
+
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (1,	 'L Authentique	Lampe à raclette traditionnelle ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (2,	 'Le Mastodonte	Combiné raclette-pierrade-fondue-crêpière-friteuse-salamandre ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (3,	 'L Éco-Chauffe	Appareil à raclette bon marché ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (4,	 'La Flamme Pro	Salamandre professionnelle haute puissance ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (5,	 'Le Petit Gourmet	Appareil à raclette 2 poêlons compact ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (6,	 'L Infrarouge 500	Rampe de chauffe infrarouge ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (7,	 'Le Sommet de l Alpage	Appareil à raclette demi-meule professionnel ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (8,	 'Le Duo-Volcan	Combiné duo pierre de lave ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (9,	 'Le Festin Familial	Appareil à raclette multifonction 8 personnes ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (10,	 'La Salamandre des Chefs	Salamandre de comptoir à plafond mobile ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (11,	 'Le Grill-Fromage	Appareil à raclette avec plaque grill intégrée ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (12,	 'Le Berger Nomade	Machine à raclette d alpage à gaz ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (13,	 'Le Radiant Latéral	Système de chauffe latéral pour fromage ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (14,	 'Le Grand Banquet	Combiné gastronomique 12 convives ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (15,	 'Le Rétro-Fonte	Appareil à raclette vintage en fonte ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (16,	 'La Meule d Or	Lampe à raclette traditionnelle ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (17,	 'Le Brasero du Tenrac	Combiné raclette-pierrade-fondue-crêpière-friteuse-salamandre ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (18,	 'L Avalanche	Appareil à raclette bon marché ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (19,	 'Le Gratinateur 3000	Salamandre professionnelle haute puissance ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (20,	 'Le Refuge	Appareil à raclette 2 poêlons compact ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (21,	 'La Chauffe du Mont	Rampe de chauffe infrarouge ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (22,	 'L Artisanat	Appareil à raclette demi-meule professionnel ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (23,	 'Le Poly-Gourmand	Combiné duo pierre de lave ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (24,	 'La Roche Noire	Appareil à raclette multifonction 8 personnes ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (25,	 'Le Brasier d Argent	Salamandre de comptoir à plafond mobile ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (26,	 'L Express-Fromage	Appareil à raclette avec plaque grill intégrée ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (27,	 'Le Chaudron Magique	Machine à raclette d alpage à gaz ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (28,	 'La Cime de Saveurs	Système de chauffe latéral pour fromage ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (29,	 'Le Fondant Royal	Combiné gastronomique 12 convives ');
+INSERT TABLE Machine (nomMachine, modeleMachine) VALUES (30,	 'L Héritage des Alpages	Appareil à raclette vintage en fonte ');
+
+PROMPT  'Insertion des données de la table Grade '; 
+
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (1,	 'Affilié ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (2,	 'Sympathisant ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (3,	 'Adhérent ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (4,	 'Chevalier / Dame ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (5,	 'Grand Chevalier / Haute Dame ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (6,	 'Commandeur ');
+INSERT TABLE Grade (idGrade, nomGrade) VALUES (7,	 'Grand’Croix ');
+
+PROMPT  'Insertion des données de la table Rang ';
+
+INSERT TABLE Rang (idRang, nomRang) VALUES (1,	 'Compagnon ');
+INSERT TABLE Rang (idRang, nomRang) VALUES (2,	 'Novice ');
+
+PROMPT  'Insertion des données de la table Titre ';
+
+INSERT TABLE (idTitre, nomTitre) VALUES (1,	 'Philanthrope ');
+INSERT TABLE (idTitre, nomTitre) VALUES (2,	 'Honorable ');
+INSERT TABLE (idTitre, nomTitre) VALUES (3,	 'Protecteur ');
+
+PROPMT  'Insertion des données de la table Dignité ';
+
+INSERT TABLE (idDignitee, nomDignité) VALUES (1,	 'Maître ');
+INSERT TABLE (idDignitee, nomDignité) VALUES (2,	 'Grand Chancelier ');
+INSERT TABLE (idDignitee, nomDignité) VALUES (3,	 'Grand Maître ');
+
+PROMPT  'Insertion des données de la table Tenrac Club ';
+
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (1,	 'La Loge du Fromage Éternel ',	15);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (2,	 'Les Chevaliers du Tender Doré ',	19);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (3,	 'L Ordre Inavoué de la Raclette Suprême ',	19);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (4,	 'Le Cercle des Fondus Tranquilles ',	21);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (5,	 'La Confrérie du Coulant Sacré ',	7);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (6,	 'Les Veilleurs de la Croûte ',	8);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (7,	 'Le Chapitre des Affilés du Gril ',	12);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (8,	 'La Table Secrète des Porte-Spatules ',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (9,	 'Les Frères de la Lampe Ardente ',	9);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (10,	 'Le Bastion du Fil Interminable ',	7);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (11,	 'La Guilde des Racleuses de l Aube ',	18);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (12,	 'Le Sanctuaire du Tender Béni ',	7);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (13,	 'Les Fils du Fromage Coulant ',	13
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (14,	 'La Cellule des Initiés du Grill Mystique',	3
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (15,	 'L Alcôve des Palais Affinés',	9);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (16,	 'Le Couvent des Tenracs Silencieux',	13);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (17,	 'La Brigade Fromagère de l Ombre',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (18,	 'Les Gardiens de la Plaque Chauffante',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (19,	 'Le Phalanstère du Bon Fondu',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (20,	 'L Assemblée des Croque-Mystères',	4);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (21,	 'L ordre des tenracs', NULL);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (22,	 'La Loge des Spatules Dorées',	4);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (23,	 'Le Tribunal du Fromage Coulant',	3);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (24,	 'Les Templiers de la Raclette Noire',	2);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (25,	 'La Chapelle des Tenders Perdus',	7);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (26,	 'L Antre du Grand Fondu',	13);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (27,	 'Le Prieuré de la Croûte Bénie',	21);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (28,	 'Les Sentinelles du Plateau Chaud',	8);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (29,	 'La Fraternité des Racleurs du Soir',	3);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (30,	 'Le Cénacle des Fromagers Errants',	17);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (31,	 'L Alliance Secrète du Fil Doré',	4);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (32,	 'Les Disciples de la Lampe Sacrée',	16);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (33,	 'La Citadelle du Tender Immuable',	17);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (34,	 'Le Cercle Inavouable des Fondus du Nord',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (35,	 'La Société du Gratin Perpétuel',	1);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (36,	 'Les Apôtres du Coulant Mystérieux',	11);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (37,	 'La Commanderie de la Plaque Ardente',	10);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (38,	 'Le Conclave des Chevaliers Racleurs',	12);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (39,	 'La Loge Hermétique du Bon Fromage',	1);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (40,	 'Les Porteurs de la Raclette Sacrée',	3);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (41,	 'Le Club des Initiés du Tender Flambé',	3);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (42,	 'La Cellule Obscure des Amateurs Fondus',	8);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (43,	 'Les Hérauts du Fromage Interminable',	21);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (44,	 'La Fraternité de l Appareil Mystique',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (45,	 'Le Chapitre des Compagnons du Gril',	2);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (46,	 'L Ordre Discret des Palais Brûlants',	10);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (47,	 'La Guilde des Maîtres Racleurs',	12);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (48,	 'Les Éveilleurs du Fromage Endormi',	15);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (49,	 'Le Bastion des Tenracs de l Ouest',	7);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (50,	 'La Confrérie du Tender et de l Épée',	14);
+INSERT TABLE (idClub, nomClub, idClubPere) VALUES (51,	 'Le Grand Atelier du Fil Fondu Éternel',	21);
+
+PROMPT "Insertion des données de la tabl Legume";
+
+INSERT TABLE (idAliment) VALUES (53);
+INSERT TABLE (idAliment) VALUES (54);
+INSERT TABLE (idAliment) VALUES (55);
+INSERT TABLE (idAliment) VALUES (56);
+INSERT TABLE (idAliment) VALUES (57);
+INSERT TABLE (idAliment) VALUES (58);
+INSERT TABLE (idAliment) VALUES (59);
+INSERT TABLE (idAliment) VALUES (60);
+INSERT TABLE (idAliment) VALUES (61);
+INSERT TABLE (idAliment) VALUES (62);
+INSERT TABLE (idAliment) VALUES (63);
+INSERT TABLE (idAliment) VALUES (64);
+INSERT TABLE (idAliment) VALUES (65);
+INSERT TABLE (idAliment) VALUES (66);
+INSERT TABLE (idAliment) VALUES (67);
+INSERT TABLE (idAliment) VALUES (68);
+INSERT TABLE (idAliment) VALUES (69);
+
+PROMPT "Insertion des données de la table Croyances";
+
+INSERT TABLE (idCroyances, nomCroyances) VALUES (1,	'Légumophobie radicale');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (2,	'Orthodoxie du Tender');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (3,	'Végétarisme de l Ordre');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (4,	'Respect des rites confessionnels');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (5,	'Antifruitisme fromager');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (6,	'Dogme de la Friteuse Unique');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (7,	'Ascétisme du Beurre');
+INSERT TABLE (idCroyances, nomCroyances) VALUES (8,	'Purisme de l Alpage');
+
+PROMPT "Insertion des données de la table Allergene";
+
+INSERT TABLE (idAllergène, nomAllergène) VALUES (1,	'Gluten');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (2,	'Lactose');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (3,	'Poisson');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (4,	'Crustacés');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (5,	'Œuf');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (6,	'Moutarde');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (7,	'Fruits à coque');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (8,	'Anhydride sulfureux');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (9,	'Soja');
+INSERT TABLE (idAllergène, nomAllergène) VALUES (10   'Graines de sésame');
+
+PROMPT "Insertion des données de la table Boisson";
+
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (1,	'Bière blonde	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (2,	'Bière brune	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (3,	'Bière blanche	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (4,	'Bière ambrée	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (5,	'Bière IPA	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (6,	'Bière rousse	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (7,	'Bière trappiste	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (8,	'Bière de saison	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (9,	'Bière sans alcool	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (10,	'Bière fruitée	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (11,	'Vin rouge	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (12,	'Vin blanc sec	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (13,	'Vin blanc doux	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (14,	'Vin rosé	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (15,	'Vin pétillant	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (16,	'Champagne	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (17,	'Prosecco	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (18,	'Crémant	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (19,	'Vin chaud	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (20,	'Vin de pays	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (21,	'Eau plate	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (22,	'Eau gazeuse	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (23,	'Coca-Cola	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (24,	'Coca-Cola Zero	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (25,	'Limonade	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (26,	'Orangina	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (27,	'Jus d'orange	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (28,	'Jus de pomme	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (29,	'Jus de raisin	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (30,	'Jus d'ananas	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (31,	'Ice Tea pêche	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (32,	'Ice Tea citron	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (33,	'Sirop de grenadine	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (34,	'Sirop de menthe	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (35,	'Lait	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (36,	'Milk-shake vanille	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (37,	'Milk-shake chocolat	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (38,	'Smoothie fruits rouges	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (39,	'Kombucha	Sans alcool
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (40,	'Café expresso	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (41,	'Café allongé	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (42,	'Café latte	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (43,	'Cappuccino	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (44,	'Thé noir	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (45,	'Thé vert	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (46,	'Thé à la menthe	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (47,	'Infusion camomille	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (48,	'Infusion gingembre citron	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (49,	'Chocolat chaud	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (50,	'Lait chaud	Chaude
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (51,	'Whisky	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (52,	'Rhum	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (53,	'Vodka	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (54,	'Gin	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (55,	'Tequila	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (56,	'Pastis	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (57,	'Porto	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (58,	'Martini	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (59,	'Aperol	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (60,	'Limoncello	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (61,	'Calvados	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (62,	'Cognac	Alcoolisée
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (63,	'Le Raclette Royale	Cocktail
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (64,	'Le Tender Flambé	Cocktail
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (65,	'Le Grand Chevalier Fondu	Cocktail
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (66,	'La Haute Dame Piquante	Cocktail
+INSERT TABLE (idBoisson, nomBoisson, typeBoisson) VALUES (67,	'Le Coup du Commandeur	Cocktail
+
+
+
