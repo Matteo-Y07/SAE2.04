@@ -1,285 +1,306 @@
-DROP  TABLE IF EXISTS Organisme CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Repas CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Aliment CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Sauce CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Ingredient CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Machine CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Grade CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Rang CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Titre CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Dignite CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS TenracClub CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Legume CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Croyances CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Allergènes CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Boisson CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS ConstituantRepas CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Tenrac CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Reunion CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Plat CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Entree CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Dessert CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Participe CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS ComposeDe CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS AccompagnéDe CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Contient CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Entretien CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Peut_heurter CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Peut_provoquer CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Recquiert CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Propose CASCADE CONSTRAINT;
-DROP  TABLE IF EXISTS Note CASCADE CONSTRAINT;
+DROP TABLE IF EXISTS Organisme CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Repas CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Aliment CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Sauce CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Ingredient CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Machine CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Grade CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Rang CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Titre CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Dignite CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS TenracClub CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Legume CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Croyances CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Allergenes CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Boisson CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS ConstituantRepas CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Tenrac CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Reunion CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Plat CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Entree CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Dessert CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Participe CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS ComposeDe CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS AccompagneDe CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Contient CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS EstConstitue CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Entretien CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Peut_heurter CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Peut_provoquer CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Recquiert CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Propose CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Note CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Possede CASCADE CONSTRAINTS;
+DROP TABLE IF EXISTS Croit CASCADE CONSTRAINTS;
+
 CREATE TABLE Organisme(
-   idOrganisme NUMBER(10),
-   raisonSociale VARCHAR2(100) NOT NULL,
-   siret CHAR(14) NOT NULL,
-   CONSTRAINT pk_Organisme PRIMARY KEY(idOrganisme)
+                          idOrganisme NUMBER(10),
+                          raisonSociale VARCHAR2(100) NOT NULL,
+                          siret CHAR(16) NOT NULL,
+                          CONSTRAINT pk_Organisme PRIMARY KEY(idOrganisme)
 );
 
 CREATE TABLE Repas(
-   idRepas NUMBER(10),
-   libelle VARCHAR2(250) NOT NULL,
-   CONSTRAINT pk_Repas PRIMARY KEY(idRepas)
+                      idRepas NUMBER(10),
+                      libelle VARCHAR2(250) NOT NULL,
+                      CONSTRAINT pk_Repas PRIMARY KEY(idRepas)
 );
 
 CREATE TABLE Aliment(
-   idAliment NUMBER(10),
-   nomAliment VARCHAR2(50),
-   CONSTRAINT pk_Aliment PRIMARY KEY(idAliment)
+                        idAliment NUMBER(10),
+                        nomAliment VARCHAR2(50),
+                        CONSTRAINT pk_Aliment PRIMARY KEY(idAliment)
 );
 
 CREATE TABLE Sauce(
-   idSauce NUMBER(10),
-   nomSauce VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Sauce PRIMARY KEY(idSauce)
+                      idSauce NUMBER(10),
+                      nomSauce VARCHAR2(50) NOT NULL,
+                      CONSTRAINT pk_Sauce PRIMARY KEY(idSauce)
 );
 
 CREATE TABLE Ingredient(
-   idIngredient NUMBER(10),
-   nomIngredient VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Ingredient PRIMARY KEY(idIngredient)
+                           idIngredient NUMBER(10),
+                           nomIngredient VARCHAR2(50) NOT NULL,
+                           CONSTRAINT pk_Ingredient PRIMARY KEY(idIngredient)
 );
 
 CREATE TABLE Machine(
-   idMachine NUMBER(10),
-   nomMachine VARCHAR2(50) NOT NULL,
-   modeleMachine_ VARCHAR2(100) NOT NULL,
-   CONSTRAINT pk_Machine PRIMARY KEY(idMachine)
+                        idMachine NUMBER(10),
+                        nomMachine VARCHAR2(50) NOT NULL,
+                        modeleMachine VARCHAR2(100) NOT NULL,
+                        CONSTRAINT pk_Machine PRIMARY KEY(idMachine)
 );
 
 CREATE TABLE Grade(
-   idGrade NUMBER(10),
-   nomGrade VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Grade PRIMARY KEY(idGrade)
+                      idGrade NUMBER(10),
+                      nomGrade VARCHAR2(50) NOT NULL,
+                      CONSTRAINT pk_Grade PRIMARY KEY(idGrade)
 );
 
 CREATE TABLE Rang(
-   idRang NUMBER(10),
-   nomRang VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Rang PRIMARY KEY(idRang)
+                     idRang NUMBER(10),
+                     nomRang VARCHAR2(50) NOT NULL,
+                     CONSTRAINT pk_Rang PRIMARY KEY(idRang)
 );
 
 CREATE TABLE Titre(
-   idTitre NUMBER(10),
-   nomTitre VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Titre PRIMARY KEY(idTitre)
+                      idTitre NUMBER(10),
+                      nomTitre VARCHAR2(50) NOT NULL,
+                      CONSTRAINT pk_Titre PRIMARY KEY(idTitre)
 );
 
 CREATE TABLE Dignite(
-   idDignite NUMBER(10),
-   nomDignite VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Dignite PRIMARY KEY(idDignite)
+                        idDignite NUMBER(10),
+                        nomDignite VARCHAR2(50) NOT NULL,
+                        CONSTRAINT pk_Dignite PRIMARY KEY(idDignite)
 );
 
 CREATE TABLE TenracClub(
-   idClub NUMBER(10),
-   nomClub VARCHAR2(50) NOT NULL,
-   idClub_1 NUMBER(10) NOT NULL,
-   CONSTRAINT pk_TenracClub PRIMARY KEY(idClub),
-   CONSTRAINT uk_TenracClub_01 UNIQUE(nomClub),
-   CONSTRAINT fk_TenracClub_TenracClubPere FOREIGN KEY(idClub_1) REFERENCES TenracClub(idClub)
+                           idClub NUMBER(10),
+                           nomClub VARCHAR2(50) NOT NULL,
+                           idClub_1 NUMBER(10),
+                           CONSTRAINT pk_TenracClub PRIMARY KEY(idClub),
+                           CONSTRAINT uk_TenracClub_01 UNIQUE(nomClub),
+                           CONSTRAINT fk_TenracClub_TenracClubPere FOREIGN KEY(idClub_1) REFERENCES TenracClub(idClub)
 );
 
 CREATE TABLE Legume(
-   idAliment NUMBER(10),
-   CONSTRAINT pk_Legume PRIMARY KEY(idAliment),
-   CONSTRAINT fk_Legume_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment)
+                       idAliment NUMBER(10),
+                       CONSTRAINT pk_Legume PRIMARY KEY(idAliment),
+                       CONSTRAINT fk_Legume_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment)
 );
 
 CREATE TABLE Croyances(
-   idCroyances NUMBER(10),
-   nomCroyances VARCHAR2(50),
-   CONSTRAINT pk_Croyances PRIMARY KEY(idCroyances)
+                          idCroyances NUMBER(10),
+                          nomCroyances VARCHAR2(50),
+                          CONSTRAINT pk_Croyances PRIMARY KEY(idCroyances)
 );
 
-CREATE TABLE Allergènes(
-   idAllergene NUMBER(10),
-   nomAllergene VARCHAR2(50),
-   CONSTRAINT pk_Allergènes PRIMARY KEY(idAllergène)
+CREATE TABLE Allergenes(
+                           idAllergene NUMBER(10),
+                           nomAllergene VARCHAR2(50),
+                           CONSTRAINT pk_Allergenes PRIMARY KEY(idAllergene)
 );
 
 CREATE TABLE Boisson(
-   idBoisson NUMBER(10),
-   nomBoisson VARCHAR2(50),
-   typeBoisson VARCHAR2(50),
-   CONSTRAINT pk_Boisson PRIMARY KEY(idBoisson)
+                        idBoisson NUMBER(10),
+                        nomBoisson VARCHAR2(50),
+                        typeBoisson VARCHAR2(50),
+                        CONSTRAINT pk_Boisson PRIMARY KEY(idBoisson)
 );
 
 CREATE TABLE ConstituantRepas(
-   idConstituantPlat NUMBER(10),
-   CONSTRAINT pk_ConstituantRepas PRIMARY KEY(idConstituantPlat)
+                                 idConstituantPlat NUMBER(10),
+                                 CONSTRAINT pk_ConstituantRepas PRIMARY KEY(idConstituantPlat)
 );
 
 CREATE TABLE Tenrac(
-   idTenrac NUMBER(10),
-   nom VARCHAR2(50) NOT NULL,
-   prenom VARCHAR2(50) NOT NULL,
-   courriel VARCHAR2(50) NOT NULL,
-   telephone VARCHAR2(20) NOT NULL,
-   adressePostale VARCHAR2(255) NOT NULL,
-   idClub NUMBER(10),
-   idDignite NUMBER(10),
-   idGrade NUMBER(10) NOT NULL,
-   idTitre NUMBER(10),
-   idRang NUMBER(10),
-   idOrganisme NUMBER(10),
-   CONSTRAINT pk_Tenrac PRIMARY KEY(idTenrac),
-   CONSTRAINT uk_Tenrac_01 UNIQUE(courriel),
-   CONSTRAINT uk_Tenrac_02 UNIQUE(telephone),
-   CONSTRAINT fk_Tenrac_TenracClub FOREIGN KEY(idClub) REFERENCES TenracClub(idClub),
-   CONSTRAINT fk_Tenrac_Dignite FOREIGN KEY(idDignite) REFERENCES Dignite(idDignite),
-   CONSTRAINT fk_Tenrac_Grade FOREIGN KEY(idGrade) REFERENCES Grade(idGrade),
-   CONSTRAINT fk_Tenrac_Titre FOREIGN KEY(idTitre) REFERENCES Titre(idTitre),
-   CONSTRAINT fk_Tenrac_Rang FOREIGN KEY(idRang) REFERENCES Rang(idRang),
-   CONSTRAINT fk_Tenrac_Organisme FOREIGN KEY(idOrganisme) REFERENCES Organisme(idOrganisme)
+                       idTenrac NUMBER(10),
+                       nom VARCHAR2(50) NOT NULL,
+                       prenom VARCHAR2(50) NOT NULL,
+                       courriel VARCHAR2(50) NOT NULL,
+                       telephone VARCHAR2(20) NOT NULL,
+                       adressePostale VARCHAR2(255) NOT NULL,
+                       idClub NUMBER(10),
+                       idDignite NUMBER(10),
+                       idGrade NUMBER(10) NOT NULL,
+                       idTitre NUMBER(10),
+                       idRang NUMBER(10),
+                       idOrganisme NUMBER(10),
+                       CONSTRAINT pk_Tenrac PRIMARY KEY(idTenrac),
+                       CONSTRAINT uk_Tenrac_01 UNIQUE(courriel),
+                       CONSTRAINT uk_Tenrac_02 UNIQUE(telephone),
+                       CONSTRAINT fk_Tenrac_TenracClub FOREIGN KEY(idClub) REFERENCES TenracClub(idClub),
+                       CONSTRAINT fk_Tenrac_Dignite FOREIGN KEY(idDignite) REFERENCES Dignite(idDignite),
+                       CONSTRAINT fk_Tenrac_Grade FOREIGN KEY(idGrade) REFERENCES Grade(idGrade),
+                       CONSTRAINT fk_Tenrac_Titre FOREIGN KEY(idTitre) REFERENCES Titre(idTitre),
+                       CONSTRAINT fk_Tenrac_Rang FOREIGN KEY(idRang) REFERENCES Rang(idRang),
+                       CONSTRAINT fk_Tenrac_Organisme FOREIGN KEY(idOrganisme) REFERENCES Organisme(idOrganisme)
 );
 
 CREATE TABLE Reunion(
-   idReunion NUMBER(10),
-   dateReunion TIMESTAMP WITH TIME ZONE NOT NULL,
-   adresseReunion SDO_GEOMETRY NOT NULL,
-   idTenrac NUMBER(10) NOT NULL,
-   idRepas NUMBER(10),
-   CONSTRAINT pk_Reunion PRIMARY KEY(idReunion),
-   CONSTRAINT fk_Reunion_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
-   CONSTRAINT fk_Reunion_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas)
+                        idReunion NUMBER(10),
+                        dateReunion TIMESTAMP WITH TIME ZONE NOT NULL,
+                        adresseReunion SDO_GEOMETRY NOT NULL,
+                        idTenrac NUMBER(10) NOT NULL,
+                        idRepas NUMBER(10),
+                        CONSTRAINT pk_Reunion PRIMARY KEY(idReunion),
+                        CONSTRAINT fk_Reunion_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                        CONSTRAINT fk_Reunion_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas)
 );
 
 CREATE TABLE Plat(
-   idConstituantPlat NUMBER(10),
-   nomPlat VARCHAR2(50) NOT NULL,
-   CONSTRAINT pk_Plat PRIMARY KEY(idConstituantPlat),
-   CONSTRAINT uk_Plat_01 UNIQUE(nomPlat),
-   CONSTRAINT fk_Plat_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
+                     idConstituantPlat NUMBER(10),
+                     nomPlat VARCHAR2(50) NOT NULL,
+                     CONSTRAINT pk_Plat PRIMARY KEY(idConstituantPlat),
+                     CONSTRAINT uk_Plat_01 UNIQUE(nomPlat),
+                     CONSTRAINT fk_Plat_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
 );
 
 CREATE TABLE Entree(
-   idConstituantPlat NUMBER(10),
-   nomEntree VARCHAR2(75) NOT NULL,
-   CONSTRAINT pk_Entree PRIMARY KEY(idConstituantPlat),
-   CONSTRAINT uk_Entree_01 UNIQUE(nomEntree),
-   CONSTRAINT fk_Entree_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
+                       idConstituantPlat NUMBER(10),
+                       nomEntree VARCHAR2(75) NOT NULL,
+                       CONSTRAINT pk_Entree PRIMARY KEY(idConstituantPlat),
+                       CONSTRAINT uk_Entree_01 UNIQUE(nomEntree),
+                       CONSTRAINT fk_Entree_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
 );
 
 CREATE TABLE Dessert(
-   idConstituantPlat NUMBER(10),
-   nomDessert VARCHAR2(75) NOT NULL,
-   CONSTRAINT pk_Dessert PRIMARY KEY(idConstituantPlat),
-   CONSTRAINT uk_Dessert_01 UNIQUE(nomDessert),
-   CONSTRAINT fk_Dessert_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
+                        idConstituantPlat NUMBER(10),
+                        nomDessert VARCHAR2(75) NOT NULL,
+                        CONSTRAINT pk_Dessert PRIMARY KEY(idConstituantPlat),
+                        CONSTRAINT uk_Dessert_01 UNIQUE(nomDessert),
+                        CONSTRAINT fk_Dessert_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
 );
 
 CREATE TABLE Participe(
-   idTenrac NUMBER(10),
-   idReunion NUMBER(10),
-   CONSTRAINT pk_Participe PRIMARY KEY(idTenrac, idReunion),
-   CONSTRAINT fk_Participe_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
-   CONSTRAINT fk_Participe_Reunion FOREIGN KEY(idReunion) REFERENCES Reunion(idReunion)
+                          idTenrac NUMBER(10),
+                          idReunion NUMBER(10),
+                          CONSTRAINT pk_Participe PRIMARY KEY(idTenrac, idReunion),
+                          CONSTRAINT fk_Participe_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                          CONSTRAINT fk_Participe_Reunion FOREIGN KEY(idReunion) REFERENCES Reunion(idReunion)
 );
 
 CREATE TABLE ComposeDe(
-   idRepas NUMBER(10),
-   idConstituantPlat NUMBER(10),
-   CONSTRAINT pk_ComposeDe PRIMARY KEY(idRepas, idConstituantPlat),
-   CONSTRAINT fk_ComposeDe_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas),
-   CONSTRAINT fk_ComposeDe_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
+                          idRepas NUMBER(10),
+                          idConstituantPlat NUMBER(10),
+                          CONSTRAINT pk_ComposeDe PRIMARY KEY(idRepas, idConstituantPlat),
+                          CONSTRAINT fk_ComposeDe_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas),
+                          CONSTRAINT fk_ComposeDe_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
 );
 
 CREATE TABLE EstConstitue(
-   idAliment NUMBER(10),
-   idConstituantPlat NUMBER(10),
-   CONSTRAINT pk_EstConstitue PRIMARY KEY(idAliment, idConstituantPlat),
-   CONSTRAINT fk_EstConstitue_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
-   CONSTRAINT fk_EstConsitue_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
+                             idAliment NUMBER(10),
+                             idConstituantPlat NUMBER(10),
+                             CONSTRAINT pk_EstConstitue PRIMARY KEY(idAliment, idConstituantPlat),
+                             CONSTRAINT fk_EstConstitue_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
+                             CONSTRAINT fk_EstConsitue_ConstituantRepas FOREIGN KEY(idConstituantPlat) REFERENCES ConstituantRepas(idConstituantPlat)
 );
 
 CREATE TABLE AccompagneDe(
-   idConstituantPlat NUMBER(10),
-   idSauce NUMBER(10),
-   CONSTRAINT pk_AccompagneDe PRIMARY KEY(idConstituantPlat, idSauce),
-   CONSTRAINT fk_AccompagneDe_Plat FOREIGN KEY(idConstituantPlat) REFERENCES Plat(idConstituantPlat),
-   CONSTRAINT fk_AccompagneDe_Sauce FOREIGN KEY(idSauce) REFERENCES Sauce(idSauce)
+                             idConstituantPlat NUMBER(10),
+                             idSauce NUMBER(10),
+                             CONSTRAINT pk_AccompagneDe PRIMARY KEY(idConstituantPlat, idSauce),
+                             CONSTRAINT fk_AccompagneDe_Plat FOREIGN KEY(idConstituantPlat) REFERENCES Plat(idConstituantPlat),
+                             CONSTRAINT fk_AccompagneDe_Sauce FOREIGN KEY(idSauce) REFERENCES Sauce(idSauce)
 );
 
 CREATE TABLE Contient(
-   idSauce NUMBER(10),
-   idIngredient NUMBER(10),
-   CONSTRAINT pk_Contient PRIMARY KEY(idSauce, idIngredient),
-   CONSTRAINT fk_Contient_Sauce FOREIGN KEY(idSauce) REFERENCES Sauce(idSauce),
-   CONSTRAINT fk_Contient_Ingredient FOREIGN KEY(idIngredient) REFERENCES Ingredient(idIngredient)
+                         idSauce NUMBER(10),
+                         idIngredient NUMBER(10),
+                         CONSTRAINT pk_Contient PRIMARY KEY(idSauce, idIngredient),
+                         CONSTRAINT fk_Contient_Sauce FOREIGN KEY(idSauce) REFERENCES Sauce(idSauce),
+                         CONSTRAINT fk_Contient_Ingredient FOREIGN KEY(idIngredient) REFERENCES Ingredient(idIngredient)
 );
 
 CREATE TABLE Entretien(
-   idTenrac NUMBER(10),
-   idMachine NUMBER(10),
-   date_ DATE NOT NULL,
-   CONSTRAINT pk_Entretien PRIMARY KEY(idTenrac, idMachine),
-   CONSTRAINT fk_Entretien_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
-   CONSTRAINT fk_Entretien_Machine FOREIGN KEY(idMachine) REFERENCES Machine(idMachine)
+                          idTenrac NUMBER(10),
+                          idMachine NUMBER(10),
+                          date_ DATE NOT NULL,
+                          CONSTRAINT pk_Entretien PRIMARY KEY(idTenrac, idMachine),
+                          CONSTRAINT fk_Entretien_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                          CONSTRAINT fk_Entretien_Machine FOREIGN KEY(idMachine) REFERENCES Machine(idMachine)
 );
 
 CREATE TABLE Peut_heurter(
-   idAliment NUMBER(10),
-   idCroyances NUMBER(10),
-   CONSTRAINT pk_Peut_heurter PRIMARY KEY(idAliment, idCroyances),
-   CONSTRAINT fk_Peut_heurter_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
-   CONSTRAINT fk_Peut_heurter_Croyances FOREIGN KEY(idCroyances) REFERENCES Croyances(idCroyances)
+                             idAliment NUMBER(10),
+                             idCroyances NUMBER(10),
+                             CONSTRAINT pk_Peut_heurter PRIMARY KEY(idAliment, idCroyances),
+                             CONSTRAINT fk_Peut_heurter_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
+                             CONSTRAINT fk_Peut_heurter_Croyances FOREIGN KEY(idCroyances) REFERENCES Croyances(idCroyances)
 );
 
 CREATE TABLE Peut_provoquer(
-   idAliment NUMBER(10),
-   idAllergene NUMBER(10),
-   CONSTRAINT pk_Peut_provoquer PRIMARY KEY(idAliment, idAllergene),
-   CONSTRAINT fk_Peut_provoquer_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
-   CONSTRAINT fk_Peut_provoquer_Allergènes FOREIGN KEY(idAllergene) REFERENCES Allergènes(idAllergene)
+                               idAliment NUMBER(10),
+                               idAllergene NUMBER(10),
+                               CONSTRAINT pk_Peut_provoquer PRIMARY KEY(idAliment, idAllergene),
+                               CONSTRAINT fk_Peut_provoquer_Aliment FOREIGN KEY(idAliment) REFERENCES Aliment(idAliment),
+                               CONSTRAINT fk_Peut_provoquer_Allergenes FOREIGN KEY(idAllergene) REFERENCES Allergenes(idAllergene)
 );
 
 CREATE TABLE Recquiert(
-   idConstituantPlat NUMBER(10),
-   idMachine NUMBER(10),
-   CONSTRAINT pk_Recquiert PRIMARY KEY(idConstituantPlat, idMachine),
-   CONSTRAINT fk_Recquiert_Plat FOREIGN KEY(idConstituantPlat) REFERENCES Plat(idConstituantPlat),
-   CONSTRAINT fk_Recquiert_Machine FOREIGN KEY(idMachine) REFERENCES Machine(idMachine)
+                          idConstituantPlat NUMBER(10),
+                          idMachine NUMBER(10),
+                          CONSTRAINT pk_Recquiert PRIMARY KEY(idConstituantPlat, idMachine),
+                          CONSTRAINT fk_Recquiert_Plat FOREIGN KEY(idConstituantPlat) REFERENCES Plat(idConstituantPlat),
+                          CONSTRAINT fk_Recquiert_Machine FOREIGN KEY(idMachine) REFERENCES Machine(idMachine)
 );
 
 CREATE TABLE Propose(
-   idRepas NUMBER(10),
-   idBoisson NUMBER(10),
-   CONSTRAINT pk_Propose PRIMARY KEY(idRepas, idBoisson),
-   CONSTRAINT fk_Propose_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas),
-   CONSTRAINT fk_Propose_Boisson FOREIGN KEY(idBoisson) REFERENCES Boisson(idBoisson)
+                        idRepas NUMBER(10),
+                        idBoisson NUMBER(10),
+                        CONSTRAINT pk_Propose PRIMARY KEY(idRepas, idBoisson),
+                        CONSTRAINT fk_Propose_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas),
+                        CONSTRAINT fk_Propose_Boisson FOREIGN KEY(idBoisson) REFERENCES Boisson(idBoisson)
 );
 
 CREATE TABLE Note(
-   idTenrac NUMBER(10),
-   idRepas NUMBER(10),
-   avis VARCHAR2(200) NOT NULL,
-   date_ DATE NOT NULL,
-   note NUMBER(2,0) NOT NULL,
-   CONSTRAINT pk_Note PRIMARY KEY(idTenrac, idRepas),
-   CONSTRAINT fk_Note_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
-   CONSTRAINT fk_Note_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas)
+                     idTenrac NUMBER(10),
+                     idRepas NUMBER(10),
+                     avis VARCHAR2(200) NOT NULL,
+                     date_ DATE NOT NULL,
+                     note NUMBER(2,0) NOT NULL,
+                     CONSTRAINT pk_Note PRIMARY KEY(idTenrac, idRepas),
+                     CONSTRAINT fk_Note_Tenrac FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                     CONSTRAINT fk_Note_Repas FOREIGN KEY(idRepas) REFERENCES Repas(idRepas)
 );
+
+CREATE TABLE Possede(
+                        idTenrac NUMBER(10),
+                        idAllergene NUMBER(10),
+                        PRIMARY KEY(idTenrac, idAllergene),
+                        FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                        FOREIGN KEY(idAllergene) REFERENCES Allergenes(idAllergene)
+);
+
+CREATE TABLE Croit(
+                      idTenrac NUMBER(10),
+                      idCroyances NUMBER(10),
+                      PRIMARY KEY(idTenrac, idCroyances),
+                      FOREIGN KEY(idTenrac) REFERENCES Tenrac(idTenrac),
+                      FOREIGN KEY(idCroyances) REFERENCES Croyances(idCroyances)
+);
+
 
 -- ============================================================
 -- Organisme  (10 lignes)
@@ -329,57 +350,57 @@ INSERT INTO Dignite (idDignite, nomDignite) VALUES (3, 'Grand Maître');
 -- ============================================================
 -- TenracClub  (51 lignes)
 -- ============================================================
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (1, 'La Loge du Fromage Éternel', 15);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (2, 'Les Chevaliers du Tender Doré', 19);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (3, 'L''Ordre Inavoué de la Raclette Suprême', 19);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (21, 'L''ordre des tenracs', null);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (19, 'Le Phalanstère du Bon Fondu', 21);  -- était 14
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (14, 'La Cellule des Initiés du Grill Mystique', 21);  -- était 3
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (3, 'L''Ordre Inavoué de la Raclette Suprême', 21);  -- était 19
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (4, 'Le Cercle des Fondus Tranquilles', 21);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (5, 'La Confrérie du Coulant Sacré', 7);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (6, 'Les Veilleurs de la Croûte', 8);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (7, 'Le Chapitre des Affilés du Gril', 12);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (8, 'La Table Secrète des Porte-Spatules', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (9, 'Les Frères de la Lampe Ardente', 9);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (10, 'Le Bastion du Fil Interminable', 7);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (11, 'La Guilde des Racleuses de l''Aube', 18);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (12, 'Le Sanctuaire du Tender Béni', 7);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (13, 'Les Fils du Fromage Coulant', 13);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (14, 'La Cellule des Initiés du Grill Mystique', 3);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (15, 'L''Alcôve des Palais Affinés', 9);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (16, 'Le Couvent des Tenracs Silencieux', 13);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (17, 'La Brigade Fromagère de l''Ombre', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (18, 'Les Gardiens de la Plaque Chauffante', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (19, 'Le Phalanstère du Bon Fondu', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (20, 'L''Assemblée des Croque-Mystères', 4);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (21, 'L''ordre des tenracs', NULL);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (22, 'La Loge des Spatules Dorées', 4);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (23, 'Le Tribunal du Fromage Coulant', 3);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (24, 'Les Templiers de la Raclette Noire', 2);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (25, 'La Chapelle des Tenders Perdus', 7);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (26, 'L''Antre du Grand Fondu', 13);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (27, 'Le Prieuré de la Croûte Bénie', 21);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (28, 'Les Sentinelles du Plateau Chaud', 8);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (29, 'La Fraternité des Racleurs du Soir', 3);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (30, 'Le Cénacle des Fromagers Errants', 17);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (43, 'Les Hérauts du Fromage Interminable', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (51, 'Le Grand Atelier du Fil Fondu Éternel', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (2, 'Les Chevaliers du Tender Doré', 19);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (20, 'L''Assemblée des Croque-Mystères', 4);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (22, 'La Loge des Spatules Dorées', 4);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (31, 'L''Alliance Secrète du Fil Doré', 4);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (32, 'Les Disciples de la Lampe Sacrée', 16);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (33, 'La Citadelle du Tender Immuable', 17);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (34, 'Le Cercle Inavouable des Fondus du Nord', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (35, 'La Société du Gratin Perpétuel', 1);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (36, 'Les Apôtres du Coulant Mystérieux', 11);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (37, 'La Commanderie de la Plaque Ardente', 10);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (38, 'Le Conclave des Chevaliers Racleurs', 12);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (39, 'La Loge Hermétique du Bon Fromage', 1);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (23, 'Le Tribunal du Fromage Coulant', 3);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (29, 'La Fraternité des Racleurs du Soir', 3);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (40, 'Les Porteurs de la Raclette Sacrée', 3);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (41, 'Le Club des Initiés du Tender Flambé', 3);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (42, 'La Cellule Obscure des Amateurs Fondus', 8);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (43, 'Les Hérauts du Fromage Interminable', 21);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (44, 'La Fraternité de l''Appareil Mystique', 14);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (24, 'Les Templiers de la Raclette Noire', 2);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (45, 'Le Chapitre des Compagnons du Gril', 2);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (46, 'L''Ordre Discret des Palais Brûlants', 10);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (47, 'La Guilde des Maîtres Racleurs', 12);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (48, 'Les Éveilleurs du Fromage Endormi', 15);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (49, 'Le Bastion des Tenracs de l''Ouest', 7);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (8, 'La Table Secrète des Porte-Spatules', 14);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (17, 'La Brigade Fromagère de l''Ombre', 14);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (18, 'Les Gardiens de la Plaque Chauffante', 14);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (34, 'Le Cercle Inavouable des Fondus du Nord', 14);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (44, 'La Fraternité de l''Appareil Mystique', 14);
 INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (50, 'La Confrérie du Tender et de l''Épée', 14);
-INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (51, 'Le Grand Atelier du Fil Fondu Éternel', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (6, 'Les Veilleurs de la Croûte', 8);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (28, 'Les Sentinelles du Plateau Chaud', 8);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (42, 'La Cellule Obscure des Amateurs Fondus', 8);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (13, 'Les Fils du Fromage Coulant', 13);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (16, 'Le Couvent des Tenracs Silencieux', 13);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (26, 'L''Antre du Grand Fondu', 13);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (30, 'Le Cénacle des Fromagers Errants', 17);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (33, 'La Citadelle du Tender Immuable', 17);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (32, 'Les Disciples de la Lampe Sacrée', 16);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (11, 'La Guilde des Racleuses de l''Aube', 18);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (36, 'Les Apôtres du Coulant Mystérieux', 11);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (9, 'Les Frères de la Lampe Ardente', 9);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (15, 'L''Alcôve des Palais Affinés', 9);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (1, 'La Loge du Fromage Éternel', 15);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (48, 'Les Éveilleurs du Fromage Endormi', 15);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (35, 'La Société du Gratin Perpétuel', 1);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (39, 'La Loge Hermétique du Bon Fromage', 1);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (7, 'Le Chapitre des Affilés du Gril', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (12, 'Le Sanctuaire du Tender Béni', 7);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (37, 'La Commanderie de la Plaque Ardente', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (38, 'Le Conclave des Chevaliers Racleurs', 12);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (46, 'L''Ordre Discret des Palais Brûlants', 21);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (47, 'La Guilde des Maîtres Racleurs', 12);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (5, 'La Confrérie du Coulant Sacré', 7);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (10, 'Le Bastion du Fil Interminable', 7);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (25, 'La Chapelle des Tenders Perdus', 7);
+INSERT INTO TenracClub (idClub, nomClub, idClub_1) VALUES (49, 'Le Bastion des Tenracs de l''Ouest', 7);
 
 -- ============================================================
 -- Aliment  (69 lignes)
