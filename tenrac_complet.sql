@@ -160,8 +160,8 @@ CREATE TABLE Tenrac(
 
 CREATE TABLE Reunion(
                         idReunion NUMBER(10),
-                        dateReunion TIMESTAMP WITH TIME ZONE NOT NULL,
-                        adresseReunion SDO_GEOMETRY NOT NULL,
+                        dateReunion DATE,
+                        adresseReunion VARCHAR2(50) NOT NULL,
                         idTenrac NUMBER(10) NOT NULL,
                         idRepas NUMBER(10),
                         CONSTRAINT pk_Reunion PRIMARY KEY(idReunion),
