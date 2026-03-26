@@ -1,0 +1,85 @@
+85,2025-05-10,12 Rue du Fromage Éternel,32,3
+1,2024-01-26,8342 Duke Court,32,6
+2,2024-01-28,294 Derek Terrace,46,2
+3,2024-01-31,9 Jay Avenue,56,24
+4,2024-02-02,09 Jackson Hill,2,16
+5,2024-03-30,13 Reinke Lane,60,19
+6,2024-04-05,5 Autumn Leaf Way,241,12
+7,2024-04-14,6162 Montana Lane,266,17
+8,2024-04-24,8346 Pierstorff Circle,133,24
+9,2024-05-22,9351 Fairview Circle,289,8
+10,2024-07-22,71 Superior Plaza,191,15
+11,2024-08-11,517 Mcguire Plaza,74,6
+12,2024-08-13,28867 Anthes Court,2,16
+13,2024-08-16,75 Bashford Place,275,25
+14,2024-08-26,50691 Becker Junction,156,7
+15,2024-09-07,836 Arkansas Junction,281,4
+16,2024-10-08,83 Declaration Drive,202,20
+17,2025-03-05,6 Hovde Pass,246,5
+18,2025-03-08,69 Monica Hill,241,15
+19,2025-06-01,35505 Rigney Pass,254,16
+20,2025-07-12,50182 Springview Street,180,21
+21,2025-07-28,39 Truax Pass,96,11
+22,2025-08-27,959 Shelley Lane,118,6
+23,2025-09-08,4663 Banding Terrace,2,18
+24,2025-10-16,077 Sheridan Crossing,241,11
+25,2025-10-27,30562 Cambridge Crossing,140,24
+26,2025-11-23,42 Esch Drive,289,17
+27,2025-12-19,57531 Gateway Circle,153,24
+28,2026-01-03,0 Pankratz Junction,273,4
+29,2026-01-24,2 Hanson Center,148,20
+30,2026-01-28,5031 Judy Way,56,5
+31,2026-01-29,053 Dottie Park,133,15
+32,2026-02-14,3 Luster Terrace,241,24
+33,2026-02-25,4275 Johnson Circle,210,16
+34,2026-03-20,3378 Blue Bill Park Alley,134,19
+35,2024-01-27,"390 Allée de la Croûte, Annecy",1126,8
+36,2024-02-07,"779 Avenue des Initiés, Annemasse",2377,22
+37,2024-02-29,"92 Route des Fondus, Annemasse",2732,19
+38,2024-03-11,"812 Chemin des Spatules, Chambéry",759,15
+39,2024-04-02,"184 Chemin de la Raclette, Oyonnax",445,16
+40,2024-04-13,"413 Rue des Initiés, Oyonnax",26,14
+41,2024-04-27,"372 Avenue du Conclave, Oyonnax",972,20
+42,2024-05-16,"53 Chemin du Grand Maître, Chambéry",795,24
+43,2024-06-01,"610 Boulevard de l'Ordre, Annecy",191,4
+44,2024-06-10,"176 Route de la Lame, Grenoble",1954,21
+45,2024-06-26,"147 Impasse de la Croûte, Lyon",1783,11
+46,2024-07-13,"536 Place des Fondus, Lyon",2857,7
+47,2024-08-03,"264 Place du Grand Maître, Bourg-en-Bresse",2157,2
+48,2024-08-13,"757 Boulevard de la Croûte, Annemasse",610,4
+49,2024-08-28,"148 Impasse de la Confrérie, Annecy",1892,5
+50,2024-09-15,"902 Chemin des Convictions, Chambéry",1251,4
+51,2024-10-02,"191 Avenue de l'Ordre, Valence",45,19
+52,2024-10-13,"346 Allée des Spatules, Annemasse",1586,13
+53,2024-11-04,"425 Chemin du Sacré Gril, Grenoble",894,2
+54,2024-11-18,"739 Place du Conclave, Chambéry",1501,21
+55,2024-12-02,"670 Impasse des Chevaliers, Bourg-en-Bresse",1073,25
+56,2024-12-25,"729 Allée des Spatules, Valence",2009,25
+57,2024-12-31,"904 Route de la Lame, Valence",372,17
+58,2025-01-19,"929 Chemin des Convictions, Oyonnax",622,9
+59,2025-02-06,"903 Impasse de la Lame, Romans-sur-Isère",791,10
+60,2025-02-22,"695 Route des Fondus, Annemasse",1586,7
+61,2025-03-08,"5 Chemin du Coulant, Chambéry",2974,22
+62,2025-03-21,"809 Impasse de la Lame, Chambéry",1885,12
+63,2025-04-14,"410 Rue des Chevaliers, Oyonnax",2381,7
+64,2025-04-19,"535 Impasse de la Confrérie, Oyonnax",2031,7
+65,2025-05-09,"767 Place du Conclave, Oyonnax",2377,21
+66,2025-05-30,"787 Impasse des Fondus, Lyon",532,10
+67,2025-06-06,"595 Rue du Tender, Annemasse",1440,12
+68,2025-06-29,"642 Impasse des Fondus, Grenoble",1828,13
+69,2025-07-09,"272 Route de la Meule, Annecy",640,15
+70,2025-07-28,"429 Boulevard du Commandeur, Valence",1024,9
+71,2025-08-14,"587 Place de la Confrérie, Thonon-les-Bains",2557,21
+72,2025-08-30,"681 Boulevard de la Raclette, Oyonnax",1166,15
+73,2025-09-15,"16 Avenue de la Meule, Thonon-les-Bains",382,11
+74,2025-10-03,"752 Rue des Alpages, Oyonnax",1320,21
+75,2025-10-09,"597 Chemin de la Lame, Valence",825,5
+76,2025-11-02,"943 Rue des Spatules, Lyon",273,11
+77,2025-11-17,"236 Impasse de la Confrérie, Thonon-les-Bains",317,23
+78,2025-12-01,"236 Allée des Chevaliers, Thonon-les-Bains",851,9
+79,2025-12-14,"673 Chemin de la Raclette, Oyonnax",972,25
+80,2026-01-03,"178 Chemin du Sacré Gril, Grenoble",571,24
+81,2026-01-13,"845 Boulevard du Grand Maître, Oyonnax",439,2
+82,2026-02-03,"663 Place de la Confrérie, Bourg-en-Bresse",1133,20
+83,2026-02-20,"779 Boulevard de la Meule, Lyon",1612,21
+84,2026-03-05,"193 Impasse de la Confrérie, Grenoble",726,16
