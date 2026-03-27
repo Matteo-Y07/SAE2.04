@@ -1,0 +1,57 @@
+- je veux que tu génère des entrées (10) ainsi que des desserts (10) choisi des noms dans le theme
+- maintenant je fais l'association participe qui prend idTenrac et idReunion (clef etrangere), j'ai 300 tenrac, 
+j'ai 34 reunion. Je veux que tu me genere un tableau excel qui donne 30 tenrac par reunions, il ne faut pas de doublon
+- je fais maintenant idRepas et idConstituantRepas (clef etrangere), j'ai 25 repas, j'ai 100 idconstituantrepas (les 80 premier sont des plats, 
+10 suivant son pour l'entree, et les 10 suivant sont les dessert, genere moi les donnee de maniere coherrante
+
+- Dans ce fichier texte, il y a tous les inserts into de ma table NOTE, je veux que tu m'identifies tous les doublons
+- Y a-t-il encore des doublons de idTenrac et idRepas dans ce fichier ?
+
+- j'ai pour projet de créer une base de données avec les consignes suivantes : "Ce projet porte sur la gestion des adeptes des tenders de poulet la raclette (appelés tenrac). 
+Chaque agissement de ces membres doit être scrupuleusement et le plus précisément possible consigné. Un tenrac peut soit adhérer à l’un des clubs tenrac soit directement à 
+l’Ordre des tenracs, qui a par ailleurs pour vocation de fédérer l’ensemble du réseau de clubs répartis sur l’ensemble du territoire. Il est nécessaire de connaître pour chaque 
+membre son nom, courriel, numéro de téléphone, adresse postale et l’organisme associé (entreprise, organisme de formation, etc.) auquel il appartient. Un tenrac a un grade
+(Affilié, Sympathisant, Adhérent, Chevalier / Dame, Grand Chevalier / Haute Dame, Commandeur, Grand’Croix) et peut avoir un rang (Novice, Compagnon), 
+un titre (Philanthrope, Protecteur, Honorable) et même une dignité (Maître, Grand Chancelier, Grand Maître). À son arrivée, un tenrac se voit remettre une carte de membre comportant,
+en RFID, son code personnel accolé de son numéro de club et de la référence de son organisme d’appartenance dont les raisons sociales et les numéros de SIRET sont connus. 
+Les tenracs, en tant que club ou non, se réunissent par groupe dans une adresse partenaire de l’Ordre tenue secrète jusqu’au dernier moment à différentes dates pour déguster n’importe quelle déclinaison de leur repas favori. Une réunion ne peut avoir lieu sans être sous l’égide d’au moins la présence d’un/d’une Chevalier/Dame. Un repas de tenrac a un intitulé et est composé d’un ou plusieurs plats toujours à base de raclette mais dont le reste de la composition peut varier (tenders de poulet frits ou non, viande à kebab, pizza, quiche, saumon, ananas, beurre, etc.). Parmi les aliments constituant les plats, il peut arriver, à certaines occasions spéciales, qu’on y intègre même un légume, bien que cela reste rare. Ce type d’aliment doit être considéré comme à part et dument consigné comme tel pour éviter les éventuels problèmes de rejet tels que réactions allergiques, heurt à des croyances ou opposition à des convictions personnelles profondes et connues des tenracs. Enfin, certains plats peuvent avoir une ou plusieurs sauces d’accompagnement assemblant d’ingrédients (mayonnaise, sauce blanche, moutarde, ketchup, beurre, etc.). Les machines utilisées pour les repas de tenracs ont un nom et peuvent être de plusieurs modèles (lampe à raclette traditionnelle, combiné raclette-pierrade-fondue-crêpière-friteuse-salamandre, appareil à raclette bon marché, etc.). Afin d’être accepté pour une utilisation officielle, une machine doit présenter son certificat d’entretien effectué par un tenrac ayant obtenu la dignité idoine (au moins Maître). Les entretiens et leur périodicité sont de différents types dépendant du type de machine. L’historique des entretiens de chaque machine est consigné dans le registre de chaque club ou de l’Ordre.".  Nous avons faits le MCD et voici le MLD textuel : "Organisme = (idOrganisme NUMBER(10), raison_sociale VARCHAR2(100), siret CHAR(14));
+Repas = (id_repas NUMBER(10), libelle VARCHAR2(250));
+Aliment = (idAliment NUMBER(10), nom_aliment VARCHAR2(50));
+Sauce = (id_sauce NUMBER(10), nom_sauce VARCHAR2(50));
+Ingredient = (id_ingredient NUMBER(10), nom_ingredient VARCHAR2(50));
+Machine = (id_machine NUMBER(10), nom_machine VARCHAR2(50), modèle_machine_ VARCHAR2(100));
+Grade = (id_grade NUMBER(10), nom_grade VARCHAR2(50));
+Rang = (id_rang NUMBER(10), nom_rang VARCHAR2(50));
+Titre = (id_titre NUMBER(10), nom_titre VARCHAR2(50));
+Dignite = (id_dignité NUMBER(10), nom_dignité VARCHAR2(50));
+TenracClub = (idClub NUMBER(10), nomClub VARCHAR2(50), #idClub_1);
+Legume = (#idAliment);
+Croyances = (id_croyances NUMBER(10), nom_croyances VARCHAR2(50));
+Allergènes = (id_allergène NUMBER(10), nom_allergène VARCHAR2(50));
+Boisson = (id_boisson NUMBER(10), nom_boisson VARCHAR2(50), type_boisson VARCHAR2(50));
+ConstituantRepas = (idConstituantPlat NUMBER(10));
+Tenrac = (id_tenrac NUMBER(10), nom VARCHAR2(50), prenom VARCHAR2(50), courriel VARCHAR2(50), téléphone VARCHAR2(20), adresse_postale VARCHAR2(255), #idClub*, #id_dignité*, #id_grade, #id_titre*, #id_rang*, #idOrganisme*);
+Reunion = (id_reunion NUMBER(10), date_reunion TIMESTAMP WITH TIME ZONE, adresse_reunion SDO_GEOMETRY, #id_tenrac, #id_repas);
+Plat = (#idConstituantPlat, nomPlat VARCHAR2(50));
+Entree = (#idConstituantPlat, nomEntree VARCHAR2(75));
+Dessert = (#idConstituantPlat, nomDessert VARCHAR2(75));
+Participe = (#id_tenrac, #id_reunion);
+ComposeDe = (#id_repas, #idConstituantPlat);
+EstConstitue = (#idAliment, #idConstituantPlat);
+Accompagné_de = (#(#idConstituantPlat), #id_sauce);
+Contient = (#id_sauce, #id_ingredient);
+Entretien = (#id_tenrac, #id_machine, date_ DATE);
+Peut_heurter = (#idAliment, #id_croyances);
+Peut_provoquer = (#idAliment, #id_allergène);
+Recquiert = (#(#idConstituantPlat), #id_machine);
+Propose = (#id_repas, #id_boisson);
+Note = (#id_tenrac, #id_repas, avis VARCHAR2(200), date_ DATE, note NUMBER(2,0));
+". J'aurais sûrement des questions à te poser pour m'aider sur le projet, c'est bon ?
+
+- Peux-tu me donner des noms d'aliments pour la table aliments, j'en veux le plus possible
+- Peux-tu maintenant me donner des ingrédients pour la composition des sauces ?
+- La même chose avec les boissons, je veux une partie avec des cocktails et des noms un peu loufoques en lien avec le sujet, entre 4-5 cocktails
+- Génère moi des noms de club, invente
+- générez-moi 13 repas
+- générez-moi 62 plats
+
