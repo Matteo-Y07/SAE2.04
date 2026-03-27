@@ -156,10 +156,12 @@ WHERE NOT EXISTS (
     JOIN Tenrac org ON org.idTenrac = r.idTenrac
     WHERE org.prenom = 'Daphnee'
       AND org.nom = 'Gouin'
-    MINUS
-    SELECT p.idReunion
-    FROM Participe p
-    WHERE p.idTenrac = t.idTenrac
+      AND NOT EXISTS (
+        SELECT *
+        FROM Participe p
+        WHERE p.idTenrac = t.idTenrac
+        AND p.IDREUNION = r.IDREUNION
+    )
 );
 
 
