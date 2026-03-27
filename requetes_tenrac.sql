@@ -200,24 +200,23 @@ AND (
 ) = 1;
 
 
--- Q18 : Toutes les reunions auxquelles Jean Louis n'aurait pas pu participer
--- car chaque repas contenait au moins un de ses allergenes ou s'opposait a l'une de ses croyances
-FROM Reunion r
+-- Q18 : Toutes les reunions qui
+-- contenaient au moins un des allergenes ou s'opposait a l'une des croyances du tenrac d'id 330
+SELECT * FROM Reunion r
 WHERE EXISTS (
     SELECT *
     FROM ComposeDe cd
-             JOIN estconstitue ec ON ec.idConstituantPlat = cd.idConstituantPlat
+             JOIN estconstitue ec ON ec.idConstituantRepas = cd.idConstituantRepas
              JOIN Peut_provoquer p ON p.idAliment = ec.idAliment
              JOIN Possede po ON po.idAllergene = p.idAllergene
              JOIN Tenrac t ON t.idTenrac = po.idTenrac
-    WHERE t.prenom = 'Jean '
-      AND t.nom = 'Louis'
+    WHERE t.idTenrac = 330
       AND cd.idRepas = r.idRepas
 )
    OR EXISTS (
     SELECT *
     FROM ComposeDe cd
-             JOIN estconstitue ec ON ec.idConstituantPlat = cd.idConstituantPlat
+             JOIN estconstitue ec ON ec.idConstituantRepas = cd.idConstituantRepas
              JOIN Peut_heurter h ON h.idAliment = ec.idAliment
              JOIN Croit cr ON cr.idCroyances = h.idCroyances
              JOIN Tenrac t ON t.idTenrac = cr.idTenrac
